@@ -1,14 +1,29 @@
 <template>
 <div>
-<el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+<el-radio-group v-model="isCollapse"  class="isCollapse">
   <el-radio-button :label="false">展开</el-radio-button>
   <el-radio-button :label="true">收起</el-radio-button>
+ 
 </el-radio-group>
-<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+ <div class="title">
+    <el-row>
+      <label class="">欢迎：  进入</label>
+    </el-row>
+</div>
+<el-menu 
+default-active="1-4-1" 
+class="el-menu-vertical-demo" 
+@open="handleOpen"
+ @close="handleClose" 
+ :collapse="isCollapse"
+ background-color="#409EFF"
+      text-color="#fff"
+      active-text-color="#fff"
+ >
   <el-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
-      <span slot="title">导航一</span>
+      <i class="el-icon-location" style="margin-left:-122px"></i>
+      <span slot="title" style="margin-left:5px" >导航一</span>
     </template>
     <el-menu-item-group>
       <span slot="title">分组一</span>
@@ -32,6 +47,8 @@
     <span slot="title">导航三</span>
   </el-menu-item>
 </el-menu>
+
+
 </div>
     
 </template>
@@ -59,3 +76,18 @@
     }
   }
 </script>
+
+<style>
+.isCollapse{
+margin-bottom: 20px; 
+margin-top: -50px;
+float: left;
+}
+
+.title{
+  width: 80%;
+  float: right;
+  margin-top: -50px;
+}
+
+</style>
